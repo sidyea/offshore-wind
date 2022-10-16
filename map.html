@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c4695b25291620fb873a203a3d92b99e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    
+                <style>
+                    #float_image_7703a3d9aa3ed38251d3fbdee5364019 {
+                        position:absolute;
+                        bottom:0%;
+                        left:0%;
+                        }
+                </style>
+            
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_c4695b25291620fb873a203a3d92b99e" ></div>
+        
+    
+            <img id="float_image_7703a3d9aa3ed38251d3fbdee5364019" alt="float_image"
+                 src="images/logo.png"
+                 style="z-index: 999999">
+            </img>
+            
+</body>
+<script>    
+    
+            var map_c4695b25291620fb873a203a3d92b99e = L.map(
+                "map_c4695b25291620fb873a203a3d92b99e",
+                {
+                    center: [54.127, 1.382],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c51a0068add460f80612f165c78d982d = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+            var tile_layer_b566e147f4719805df2c7f16503df448 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+            var tile_layer_07ffdb5a99338285e48005a4b028c62b = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+            var tile_layer_d0e12c9865bf5529c230a5fbfae1dc41 = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+            var tile_layer_89108476c72a6abeb51a8c97d1a1cd37 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+            var tile_layer_01898608290607bca3f9ea50b2b7715b = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+            var layer_control_83f035e7e51f69a9101a20d6453af674 = {
+                base_layers : {
+                    "cartodbdark_matter" : tile_layer_89108476c72a6abeb51a8c97d1a1cd37,
+                    "openstreetmap" : tile_layer_b566e147f4719805df2c7f16503df448,
+                    "cartodbpositron" : tile_layer_07ffdb5a99338285e48005a4b028c62b,
+                    "stamentoner" : tile_layer_d0e12c9865bf5529c230a5fbfae1dc41,
+                    "stamenwatercolor" : tile_layer_01898608290607bca3f9ea50b2b7715b,
+                },
+                overlays :  {
+                },
+            };
+            L.control.layers(
+                layer_control_83f035e7e51f69a9101a20d6453af674.base_layers,
+                layer_control_83f035e7e51f69a9101a20d6453af674.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+            tile_layer_b566e147f4719805df2c7f16503df448.remove();
+            tile_layer_07ffdb5a99338285e48005a4b028c62b.remove();
+            tile_layer_d0e12c9865bf5529c230a5fbfae1dc41.remove();
+            tile_layer_89108476c72a6abeb51a8c97d1a1cd37.remove();
+            tile_layer_01898608290607bca3f9ea50b2b7715b.remove();
+        
+    
+            var marker_50d46c3fd16e591413b0ff7aa0e55f2c = L.marker(
+                [47.237972, -2.744639],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_f1b8a14437842965077d8cfd9241813f = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_4439d46eb81ae3e804a6f388f040ea25 = $(`<div id="html_4439d46eb81ae3e804a6f388f040ea25" style="width: 100.0%; height: 100.0%;"><h5>Floatgen</h5><b>Baujahr: </b>2017<br><b>Leistung: </b>2.0 MW<br><b>Turbine Zahl: </b>1<br> --- <br><b>Kustenentfernung: </b>24 km<br><b>Wassteriefe: </b>35 m</div>`)[0];
+            popup_f1b8a14437842965077d8cfd9241813f.setContent(html_4439d46eb81ae3e804a6f388f040ea25);
+        
+
+        marker_50d46c3fd16e591413b0ff7aa0e55f2c.bindPopup(popup_f1b8a14437842965077d8cfd9241813f)
+        ;
+
+        
+    
+    
+            var marker_759436b103b8c3a76beaba00b290f10e = L.marker(
+                [42.85, 3.25],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_60f156c7b682dd5685a6e8c473951fdb = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_82721203dbe808db467eacabee45403f = $(`<div id="html_82721203dbe808db467eacabee45403f" style="width: 100.0%; height: 100.0%;"><h5>Les Eoliennes flotantes du Golfe du Lion</h5><b>Baujahr: </b>2023<br><b>Leistung: </b>30.0 MW<br><b>Turbine Zahl: </b>3<br> --- <br><b>Kustenentfernung: </b>16 km<br><b>Wassteriefe: </b>70-100 m</div>`)[0];
+            popup_60f156c7b682dd5685a6e8c473951fdb.setContent(html_82721203dbe808db467eacabee45403f);
+        
+
+        marker_759436b103b8c3a76beaba00b290f10e.bindPopup(popup_60f156c7b682dd5685a6e8c473951fdb)
+        ;
+
+        
+    
+    
+            var marker_d42dcc059a739717e0cf762e6939fb99 = L.marker(
+                [43.19, 4.807],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_445e5473656c399f9e9a85c7496bf5fe = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_b31129ced756d03defd28020227b3333 = $(`<div id="html_b31129ced756d03defd28020227b3333" style="width: 100.0%; height: 100.0%;"><h5>Provence grand Large</h5><b>Baujahr: </b>2023<br><b>Leistung: </b>24.0 MW<br><b>Turbine Zahl: </b>3<br> --- <br><b>Kustenentfernung: </b>17 km<br><b>Wassteriefe: </b>100 m</div>`)[0];
+            popup_445e5473656c399f9e9a85c7496bf5fe.setContent(html_b31129ced756d03defd28020227b3333);
+        
+
+        marker_d42dcc059a739717e0cf762e6939fb99.bindPopup(popup_445e5473656c399f9e9a85c7496bf5fe)
+        ;
+
+        
+    
+    
+            var marker_85637ce3a4ff4fc25ce0e9f0e5d02aa5 = L.marker(
+                [43.023, 3.34],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_e4a0795db3c9915d0313879226031620 = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_28b246db72e7a6a5049dce42cb39d166 = $(`<div id="html_28b246db72e7a6a5049dce42cb39d166" style="width: 100.0%; height: 100.0%;"><h5>EolMed Guissan</h5><b>Baujahr: </b>2024<br><b>Leistung: </b>30.0 MW<br><b>Turbine Zahl: </b>3<br> --- <br><b>Kustenentfernung: </b>15 km<br><b>Wassteriefe: </b>62 m</div>`)[0];
+            popup_e4a0795db3c9915d0313879226031620.setContent(html_28b246db72e7a6a5049dce42cb39d166);
+        
+
+        marker_85637ce3a4ff4fc25ce0e9f0e5d02aa5.bindPopup(popup_e4a0795db3c9915d0313879226031620)
+        ;
+
+        
+    
+    
+            var marker_8f01cc1c4f6fca8a1741aaf1e15969a1 = L.marker(
+                [47.399972, -3.399972],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_526bf9c8f14bab7d7fc37fb6a5898561 = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_1db0ace858b14509efa2031aa6ef9258 = $(`<div id="html_1db0ace858b14509efa2031aa6ef9258" style="width: 100.0%; height: 100.0%;"><h5>Groix und Belle-Ile</h5><b>Baujahr: </b>2022<br><b>Leistung: </b>28.5 MW<br><b>Turbine Zahl: </b>3<br> --- <br><b>Kustenentfernung: </b>22 km<br><b>Wassteriefe: </b>55-70 m</div>`)[0];
+            popup_526bf9c8f14bab7d7fc37fb6a5898561.setContent(html_1db0ace858b14509efa2031aa6ef9258);
+        
+
+        marker_8f01cc1c4f6fca8a1741aaf1e15969a1.bindPopup(popup_526bf9c8f14bab7d7fc37fb6a5898561)
+        ;
+
+        
+    
+    
+            var marker_bdc61102e01a1377d530e1b31cb9f01f = L.marker(
+                [47.299972, 4.9],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_9f812188d7776fe2fe654a030f6bf3ae = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_d80dafcfc03812fd19a975140e06940f = $(`<div id="html_d80dafcfc03812fd19a975140e06940f" style="width: 100.0%; height: 100.0%;"><h5>Mistral</h5><b>Baujahr: </b>nan<br><b>Leistung: </b>10.0 MW<br><b>Turbine Zahl: </b>2-3<br> --- <br><b>Kustenentfernung: </b>11 km<br><b>Wassteriefe: </b>70 m</div>`)[0];
+            popup_9f812188d7776fe2fe654a030f6bf3ae.setContent(html_d80dafcfc03812fd19a975140e06940f);
+        
+
+        marker_bdc61102e01a1377d530e1b31cb9f01f.bindPopup(popup_9f812188d7776fe2fe654a030f6bf3ae)
+        ;
+
+        
+    
+    
+            var marker_a0023e5ac1adeabf91061b85dedad518 = L.marker(
+                [51.45797, -5.602],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_b356f6e293c42fad3622918158b77d53 = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_985e91d0beedfc335fb5153ec6cfc707 = $(`<div id="html_985e91d0beedfc335fb5153ec6cfc707" style="width: 100.0%; height: 100.0%;"><h5>Erebus Floating Wind Demo</h5><b>Baujahr: </b>2026<br><b>Leistung: </b>96.0 MW<br><b>Turbine Zahl: </b>7 bis 10<br> --- <br><b>Kustenentfernung: </b>45 km<br><b>Wassteriefe: </b>Bis 80 m</div>`)[0];
+            popup_b356f6e293c42fad3622918158b77d53.setContent(html_985e91d0beedfc335fb5153ec6cfc707);
+        
+
+        marker_a0023e5ac1adeabf91061b85dedad518.bindPopup(popup_b356f6e293c42fad3622918158b77d53)
+        ;
+
+        
+    
+    
+            var marker_a36170d0f65a6e79f578db38603dd335 = L.marker(
+                [55.17, -1.37],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_41778d44009a846885b0a996c88e4315 = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_a495ff39a47e2ae5866654e95eceb90e = $(`<div id="html_a495ff39a47e2ae5866654e95eceb90e" style="width: 100.0%; height: 100.0%;"><h5>Blyth Offshore (NaREC)</h5><b>Baujahr: </b>2018<br><b>Leistung: </b>41.5 MW<br><b>Turbine Zahl: </b>5<br> --- <br><b>Kustenentfernung: </b>6-14 km<br><b>Wassteriefe: </b>35-60 m</div>`)[0];
+            popup_41778d44009a846885b0a996c88e4315.setContent(html_a495ff39a47e2ae5866654e95eceb90e);
+        
+
+        marker_a36170d0f65a6e79f578db38603dd335.bindPopup(popup_41778d44009a846885b0a996c88e4315)
+        ;
+
+        
+    
+    
+            var marker_bc43494eac21dde951aa5d98833c2479 = L.marker(
+                [57.016, -1.792],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_c9ed3ce693f59296129e011cf00932a7 = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_42e307a004ddee506e64877036ab1d37 = $(`<div id="html_42e307a004ddee506e64877036ab1d37" style="width: 100.0%; height: 100.0%;"><h5>Kincardine</h5><b>Baujahr: </b>2021<br><b>Leistung: </b>49.6 MW<br><b>Turbine Zahl: </b>6<br> --- <br><b>Kustenentfernung: </b>15 km<br><b>Wassteriefe: </b>60-80 m</div>`)[0];
+            popup_c9ed3ce693f59296129e011cf00932a7.setContent(html_42e307a004ddee506e64877036ab1d37);
+        
+
+        marker_bc43494eac21dde951aa5d98833c2479.bindPopup(popup_c9ed3ce693f59296129e011cf00932a7)
+        ;
+
+        
+    
+    
+            var marker_ca0e345fddd19744f4d451775bff813e = L.marker(
+                [57.5, -1.3],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_19653e41b254721088a0db3acc10f255 = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_b3554130d440d3f07d9cb55f3e380539 = $(`<div id="html_b3554130d440d3f07d9cb55f3e380539" style="width: 100.0%; height: 100.0%;"><h5>Hywind Scotland</h5><b>Baujahr: </b>2017<br><b>Leistung: </b>30.0 MW<br><b>Turbine Zahl: </b>5<br> --- <br><b>Kustenentfernung: </b>25 km<br><b>Wassteriefe: </b>100-120 m</div>`)[0];
+            popup_19653e41b254721088a0db3acc10f255.setContent(html_b3554130d440d3f07d9cb55f3e380539);
+        
+
+        marker_ca0e345fddd19744f4d451775bff813e.bindPopup(popup_19653e41b254721088a0db3acc10f255)
+        ;
+
+        
+    
+    
+            var marker_d275150b395e52ec4f510f63162739f5 = L.marker(
+                [58.649972, -3.85],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_18bd8e9bd6114295b881ccfb1f6fecf2 = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_4aeaad56749ff5e796a5924a248d7a84 = $(`<div id="html_4aeaad56749ff5e796a5924a248d7a84" style="width: 100.0%; height: 100.0%;"><h5>Pentland Floating Offshore (PFOWF)</h5><b>Baujahr: </b>nan<br><b>Leistung: </b>100.0 MW<br><b>Turbine Zahl: </b>7<br> --- <br><b>Kustenentfernung: </b>7.5 km<br><b>Wassteriefe: </b>60-110 m</div>`)[0];
+            popup_18bd8e9bd6114295b881ccfb1f6fecf2.setContent(html_4aeaad56749ff5e796a5924a248d7a84);
+        
+
+        marker_d275150b395e52ec4f510f63162739f5.bindPopup(popup_18bd8e9bd6114295b881ccfb1f6fecf2)
+        ;
+
+        
+    
+    
+            var marker_ba45ef6fe212c25ddf9703552385e5ad = L.marker(
+                [50.359972, -5.61],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_52af5a659dad0120f18544f428dba21d = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_52e5b402c0c8fe749fc4f79f75d28b4d = $(`<div id="html_52e5b402c0c8fe749fc4f79f75d28b4d" style="width: 100.0%; height: 100.0%;"><h5>Twinhub Offshore Wind Demo. Project</h5><b>Baujahr: </b>nan<br><b>Leistung: </b>32.0 MW<br><b>Turbine Zahl: </b>4<br> --- <br><b>Kustenentfernung: </b>16 km<br><b>Wassteriefe: </b>50-60 m</div>`)[0];
+            popup_52af5a659dad0120f18544f428dba21d.setContent(html_52e5b402c0c8fe749fc4f79f75d28b4d);
+        
+
+        marker_ba45ef6fe212c25ddf9703552385e5ad.bindPopup(popup_52af5a659dad0120f18544f428dba21d)
+        ;
+
+        
+    
+    
+            var marker_61050652bdf31d2e2f594df53be0435a = L.marker(
+                [51.689972, 2.839972],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_66ac0a7b1518a44792a2cd199001b79f = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_fd442bac6c2d56334ca96d9256afaaeb = $(`<div id="html_fd442bac6c2d56334ca96d9256afaaeb" style="width: 100.0%; height: 100.0%;"><h5>Belwind Alstrom Haliade (im Windpark)</h5><b>Baujahr: </b>2014<br><b>Leistung: </b>6.0 MW<br><b>Turbine Zahl: </b>1<br> --- <br><b>Kustenentfernung: </b>45.4 km<br><b>Wassteriefe: </b>34 m</div>`)[0];
+            popup_66ac0a7b1518a44792a2cd199001b79f.setContent(html_fd442bac6c2d56334ca96d9256afaaeb);
+        
+
+        marker_61050652bdf31d2e2f594df53be0435a.bindPopup(popup_66ac0a7b1518a44792a2cd199001b79f)
+        ;
+
+        
+    
+    
+            var marker_36baf1a7a8a8f9edbb755d4a82e5e441 = L.marker(
+                [59.14, 5.03],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_07ee3893451268e2d49977d469211399 = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_961be13490a03abc93c8b597b128de80 = $(`<div id="html_961be13490a03abc93c8b597b128de80" style="width: 100.0%; height: 100.0%;"><h5>TetrSpar Demonstrator</h5><b>Baujahr: </b>2021<br><b>Leistung: </b>3.6 MW<br><b>Turbine Zahl: </b>1<br> --- <br><b>Kustenentfernung: </b>10 km<br><b>Wassteriefe: </b>200 m</div>`)[0];
+            popup_07ee3893451268e2d49977d469211399.setContent(html_961be13490a03abc93c8b597b128de80);
+        
+
+        marker_36baf1a7a8a8f9edbb755d4a82e5e441.bindPopup(popup_07ee3893451268e2d49977d469211399)
+        ;
+
+        
+    
+    
+            var marker_a1e9a2235ddc89f09dc786af22aaad76 = L.marker(
+                [43.46997, -2.879972],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_fe29d15bdbce45bc28efba6afd264a45 = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_a8d2ccde74566ca9f3cfb94b435835e4 = $(`<div id="html_a8d2ccde74566ca9f3cfb94b435835e4" style="width: 100.0%; height: 100.0%;"><h5>DemoSATH</h5><b>Baujahr: </b>2022<br><b>Leistung: </b>2.0 MW<br><b>Turbine Zahl: </b>1<br> --- <br><b>Kustenentfernung: </b>3 km<br><b>Wassteriefe: </b>85 m</div>`)[0];
+            popup_fe29d15bdbce45bc28efba6afd264a45.setContent(html_a8d2ccde74566ca9f3cfb94b435835e4);
+        
+
+        marker_a1e9a2235ddc89f09dc786af22aaad76.bindPopup(popup_fe29d15bdbce45bc28efba6afd264a45)
+        ;
+
+        
+    
+    
+            var marker_db95e6c4d6af0cb4c9aa5d6a927998d4 = L.marker(
+                [39.175, -9.1],
+                {}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_ddb47e5d4fdd48d02de8b933d88c4a16 = L.popup({"maxWidth": 160, "minWidth": 160});
+
+        
+            var html_c0ddf763089e195ab6218522e335185e = $(`<div id="html_c0ddf763089e195ab6218522e335185e" style="width: 100.0%; height: 100.0%;"><h5>WindFloat Atlantic</h5><b>Baujahr: </b>2020<br><b>Leistung: </b>25.0 MW<br><b>Turbine Zahl: </b>3<br> --- <br><b>Kustenentfernung: </b>20 km<br><b>Wassteriefe: </b>100 m</div>`)[0];
+            popup_ddb47e5d4fdd48d02de8b933d88c4a16.setContent(html_c0ddf763089e195ab6218522e335185e);
+        
+
+        marker_db95e6c4d6af0cb4c9aa5d6a927998d4.bindPopup(popup_ddb47e5d4fdd48d02de8b933d88c4a16)
+        ;
+
+        
+    
+    
+            var circle_marker_63b727914124c94dbe414acb1800a953 = L.circleMarker(
+                [47.238, -2.77],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_9e5b4a472eda974b0e1baad3ad4ee3ff = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_03a885c4c82a03dfb7e08a1daa442a3f = $(`<div id="html_03a885c4c82a03dfb7e08a1daa442a3f" style="width: 100.0%; height: 100.0%;"><h5>Central Nantes Test Site</h5><br><b>Info: </b>8MW, 24kV, 25km Kabel<br><b>Projects: </b>Floatgen<br><b>Area: </b>1.0 km2</div>`)[0];
+            popup_9e5b4a472eda974b0e1baad3ad4ee3ff.setContent(html_03a885c4c82a03dfb7e08a1daa442a3f);
+        
+
+        circle_marker_63b727914124c94dbe414acb1800a953.bindPopup(popup_9e5b4a472eda974b0e1baad3ad4ee3ff)
+        ;
+
+        
+    
+    
+            var circle_marker_2398c8bc8d51eb26ad791d3f64575413 = L.circleMarker(
+                [43.023, 3.34],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_0c43b43215d275de9e6148329d91aacd = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_c3b76923b3087aae17db874828394430 = $(`<div id="html_c3b76923b3087aae17db874828394430" style="width: 100.0%; height: 100.0%;"><h5>EolMed Guissan Demo</h5><br><b>Info: </b>33kV<br><b>Projects: </b>nan<br><b>Area: </b>nan km2</div>`)[0];
+            popup_0c43b43215d275de9e6148329d91aacd.setContent(html_c3b76923b3087aae17db874828394430);
+        
+
+        circle_marker_2398c8bc8d51eb26ad791d3f64575413.bindPopup(popup_0c43b43215d275de9e6148329d91aacd)
+        ;
+
+        
+    
+    
+            var circle_marker_5c9c3c15a4d69eb43a3435e00c068db9 = L.circleMarker(
+                [42.85, 3.25],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_b9868df334fa28911c8551bc560f5ea4 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_e6222766bc2792637ccd2b93087d0404 = $(`<div id="html_e6222766bc2792637ccd2b93087d0404" style="width: 100.0%; height: 100.0%;"><h5>Golfe du Lion Demo</h5><br><b>Info: </b>66 kV, 1000 km<br><b>Projects: </b>EFGL<br><b>Area: </b>2.9 km2</div>`)[0];
+            popup_b9868df334fa28911c8551bc560f5ea4.setContent(html_e6222766bc2792637ccd2b93087d0404);
+        
+
+        circle_marker_5c9c3c15a4d69eb43a3435e00c068db9.bindPopup(popup_b9868df334fa28911c8551bc560f5ea4)
+        ;
+
+        
+    
+    
+            var circle_marker_9e1a2562b5e2cecd651e21fbf8049d8e = L.circleMarker(
+                [43.29997, 4.9],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_0c6a11e039a7eb167057dd2820c60f2b = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_63c08d280ae3783ed03c1fdf0e4b5eb4 = $(`<div id="html_63c08d280ae3783ed03c1fdf0e4b5eb4" style="width: 100.0%; height: 100.0%;"><h5>Golfe de Fos Wind Test Site</h5><br><b>Info: </b>24kV<br><b>Projects: </b>Mistral<br><b>Area: </b>nan km2</div>`)[0];
+            popup_0c6a11e039a7eb167057dd2820c60f2b.setContent(html_63c08d280ae3783ed03c1fdf0e4b5eb4);
+        
+
+        circle_marker_9e1a2562b5e2cecd651e21fbf8049d8e.bindPopup(popup_0c6a11e039a7eb167057dd2820c60f2b)
+        ;
+
+        
+    
+    
+            var circle_marker_3c00463d64b1bb8e9b22cabc109105af = L.circleMarker(
+                [47.399972, -3.399972],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_c7b0d53aad0f643f5a702ba682212eae = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_d8c68f50c8872812057995c8f1a3f23f = $(`<div id="html_d8c68f50c8872812057995c8f1a3f23f" style="width: 100.0%; height: 100.0%;"><h5>Groix und Belle-Ile Demo</h5><br><b>Info: </b>63kV, 32km<br><b>Projects: </b>nan<br><b>Area: </b>nan km2</div>`)[0];
+            popup_c7b0d53aad0f643f5a702ba682212eae.setContent(html_d8c68f50c8872812057995c8f1a3f23f);
+        
+
+        circle_marker_3c00463d64b1bb8e9b22cabc109105af.bindPopup(popup_c7b0d53aad0f643f5a702ba682212eae)
+        ;
+
+        
+    
+    
+            var circle_marker_820008ae52a897ca0fe91a1812f21355 = L.circleMarker(
+                [43.19, 4.807],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_60e72cb2f1a0bb0fd35c59f9c7ac693e = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_e2c3117491e44ca46b2c1ecc1c1fb495 = $(`<div id="html_e2c3117491e44ca46b2c1ecc1c1fb495" style="width: 100.0%; height: 100.0%;"><h5>Provence Grand Large Demo</h5><br><b>Info: </b>66kV, 19km<br><b>Projects: </b>nan<br><b>Area: </b>nan km2</div>`)[0];
+            popup_60e72cb2f1a0bb0fd35c59f9c7ac693e.setContent(html_e2c3117491e44ca46b2c1ecc1c1fb495);
+        
+
+        circle_marker_820008ae52a897ca0fe91a1812f21355.bindPopup(popup_60e72cb2f1a0bb0fd35c59f9c7ac693e)
+        ;
+
+        
+    
+    
+            var circle_marker_467233664d128a497f822a249669efa2 = L.circleMarker(
+                [59.14, 5.03],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_9b22400f9a619e28661450ff7dfe7bdc = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_24cf2ce9d08cad62bf320d93376ac245 = $(`<div id="html_24cf2ce9d08cad62bf320d93376ac245" style="width: 100.0%; height: 100.0%;"><h5>METcentre</h5><br><b>Info: </b>22kV, 66kV, 12km<br><b>Projects: </b>Hywind I, Flagship, SeaTwirl, TetraSpar<br><b>Area: </b>nan km2</div>`)[0];
+            popup_9b22400f9a619e28661450ff7dfe7bdc.setContent(html_24cf2ce9d08cad62bf320d93376ac245);
+        
+
+        circle_marker_467233664d128a497f822a249669efa2.bindPopup(popup_9b22400f9a619e28661450ff7dfe7bdc)
+        ;
+
+        
+    
+    
+            var circle_marker_2745141a45b9d4e12173c8e32a72f4cb = L.circleMarker(
+                [57.49076, -1.352],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_3c922fc4daf90b8815f80c58ed3a9b6b = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_63237ded4353118ec13376e9b659c879 = $(`<div id="html_63237ded4353118ec13376e9b659c879" style="width: 100.0%; height: 100.0%;"><h5>Hywind Scotland Demo Site</h5><br><b>Info: </b>30km<br><b>Projects: </b>Hywind II<br><b>Area: </b>4.0 km2</div>`)[0];
+            popup_3c922fc4daf90b8815f80c58ed3a9b6b.setContent(html_63237ded4353118ec13376e9b659c879);
+        
+
+        circle_marker_2745141a45b9d4e12173c8e32a72f4cb.bindPopup(popup_3c922fc4daf90b8815f80c58ed3a9b6b)
+        ;
+
+        
+    
+    
+            var circle_marker_409751f5119ffc524c18202ed583cbef = L.circleMarker(
+                [51.45764, -5.602],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_c8ec1bb57b768cc30e9d1ab4e3763c81 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_3f7adc456980ac1181516196648d392e = $(`<div id="html_3f7adc456980ac1181516196648d392e" style="width: 100.0%; height: 100.0%;"><h5>Erebus Floating Wind</h5><br><b>Info: </b>66kV<br><b>Projects: </b>nan<br><b>Area: </b>32.0 km2</div>`)[0];
+            popup_c8ec1bb57b768cc30e9d1ab4e3763c81.setContent(html_3f7adc456980ac1181516196648d392e);
+        
+
+        circle_marker_409751f5119ffc524c18202ed583cbef.bindPopup(popup_c8ec1bb57b768cc30e9d1ab4e3763c81)
+        ;
+
+        
+    
+    
+            var circle_marker_72c636550b094834595849f95de28dcd = L.circleMarker(
+                [51.09728, -5.33102],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_fbbf199367ee09c0fb956d44830fa485 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_f8844ea83f361539472f2e6bf80acc43 = $(`<div id="html_f8844ea83f361539472f2e6bf80acc43" style="width: 100.0%; height: 100.0%;"><h5>White Cross Project</h5><br><b>Info: </b>nan<br><b>Projects: </b>nan<br><b>Area: </b>nan km2</div>`)[0];
+            popup_fbbf199367ee09c0fb956d44830fa485.setContent(html_f8844ea83f361539472f2e6bf80acc43);
+        
+
+        circle_marker_72c636550b094834595849f95de28dcd.bindPopup(popup_fbbf199367ee09c0fb956d44830fa485)
+        ;
+
+        
+    
+    
+            var circle_marker_b61ec88f78d11c013a850a4f9308856a = L.circleMarker(
+                [51.34, -5.45],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_9464950c884e34f370e994a715a58947 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_3fe656cfef31721eebc08dd493abdc80 = $(`<div id="html_3fe656cfef31721eebc08dd493abdc80" style="width: 100.0%; height: 100.0%;"><h5>Llyr 1</h5><br><b>Info: </b>100MW<br><b>Projects: </b>nan<br><b>Area: </b>nan km2</div>`)[0];
+            popup_9464950c884e34f370e994a715a58947.setContent(html_3fe656cfef31721eebc08dd493abdc80);
+        
+
+        circle_marker_b61ec88f78d11c013a850a4f9308856a.bindPopup(popup_9464950c884e34f370e994a715a58947)
+        ;
+
+        
+    
+    
+            var circle_marker_106ee86cfb0fb7a3df8f8e82c9e544bc = L.circleMarker(
+                [51.34, -5.26997],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_a02799b5e9e9d4ea4bf5e8681033accf = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_fdf43214c01acfc2eb5bea73e18d84c2 = $(`<div id="html_fdf43214c01acfc2eb5bea73e18d84c2" style="width: 100.0%; height: 100.0%;"><h5>Llyr 2</h5><br><b>Info: </b>100MW<br><b>Projects: </b>nan<br><b>Area: </b>nan km2</div>`)[0];
+            popup_a02799b5e9e9d4ea4bf5e8681033accf.setContent(html_fdf43214c01acfc2eb5bea73e18d84c2);
+        
+
+        circle_marker_106ee86cfb0fb7a3df8f8e82c9e544bc.bindPopup(popup_a02799b5e9e9d4ea4bf5e8681033accf)
+        ;
+
+        
+    
+    
+            var circle_marker_ca4abcb9ab865bc3339516cf4b3a0b72 = L.circleMarker(
+                [51.83415, -8.30449],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_0cfd858f4e6b3e8655a6e8c4d608b556 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_40b4b93e795bc0813ca042fd71dee5a6 = $(`<div id="html_40b4b93e795bc0813ca042fd71dee5a6" style="width: 100.0%; height: 100.0%;"><h5>Lir NOTF</h5><br><b>Info: </b>TRL 1-4<br><b>Projects: </b>nan<br><b>Area: </b>nan km2</div>`)[0];
+            popup_0cfd858f4e6b3e8655a6e8c4d608b556.setContent(html_40b4b93e795bc0813ca042fd71dee5a6);
+        
+
+        circle_marker_ca4abcb9ab865bc3339516cf4b3a0b72.bindPopup(popup_0cfd858f4e6b3e8655a6e8c4d608b556)
+        ;
+
+        
+    
+    
+            var circle_marker_60391acad01f0e4907ee572fc3a50c6c = L.circleMarker(
+                [53.22917, -9.2675],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_03562ad81c162df402b33bd6a2e7aa31 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_4f3e597e75db908cd784d1deeee030a1 = $(`<div id="html_4f3e597e75db908cd784d1deeee030a1" style="width: 100.0%; height: 100.0%;"><h5>SmartBay Galway</h5><br><b>Info: </b>TRL 4-6<br><b>Projects: </b>nan<br><b>Area: </b>0.4 km2</div>`)[0];
+            popup_03562ad81c162df402b33bd6a2e7aa31.setContent(html_4f3e597e75db908cd784d1deeee030a1);
+        
+
+        circle_marker_60391acad01f0e4907ee572fc3a50c6c.bindPopup(popup_03562ad81c162df402b33bd6a2e7aa31)
+        ;
+
+        
+    
+    
+            var circle_marker_870fb78e3945f5589538752136568166 = L.circleMarker(
+                [54.27694, -10.2703],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_e0f71efba260d579e5692e458d020dea = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_7769abf9ec8785305505ba3c728d097a = $(`<div id="html_7769abf9ec8785305505ba3c728d097a" style="width: 100.0%; height: 100.0%;"><h5>AMETS Area A</h5><br><b>Info: </b>TRL 7-9<br><b>Projects: </b>nan<br><b>Area: </b>11.59 km2</div>`)[0];
+            popup_e0f71efba260d579e5692e458d020dea.setContent(html_7769abf9ec8785305505ba3c728d097a);
+        
+
+        circle_marker_870fb78e3945f5589538752136568166.bindPopup(popup_e0f71efba260d579e5692e458d020dea)
+        ;
+
+        
+    
+    
+            var circle_marker_592bb5afa5343ab974ce29f3af8c6b40 = L.circleMarker(
+                [54.29408, 11.9125],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_ae9893ea77b7c41ab89b2c18fd4f5ba4 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_94eaf0434b84c2c2132a7096f21f7e18 = $(`<div id="html_94eaf0434b84c2c2132a7096f21f7e18" style="width: 100.0%; height: 100.0%;"><h5>NaT-Off (Rostock)</h5><br><b>Info: </b>150 MW, 9-12 Anlagen<br><b>Projects: </b>nan<br><b>Area: </b>nan km2</div>`)[0];
+            popup_ae9893ea77b7c41ab89b2c18fd4f5ba4.setContent(html_94eaf0434b84c2c2132a7096f21f7e18);
+        
+
+        circle_marker_592bb5afa5343ab974ce29f3af8c6b40.bindPopup(popup_ae9893ea77b7c41ab89b2c18fd4f5ba4)
+        ;
+
+        
+    
+    
+            var circle_marker_459d60ff64f3acd9f76f957975d487de = L.circleMarker(
+                [54.1765, 7.8922],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_9f018f139c87f7e35c14975af94e65c8 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_6d9ded1c213032225e24d8d5ec408575 = $(`<div id="html_6d9ded1c213032225e24d8d5ec408575" style="width: 100.0%; height: 100.0%;"><h5>Helgoland (TfMT)</h5><br><b>Info: </b>Noch kein FOW<br><b>Projects: </b>nan<br><b>Area: </b>nan km2</div>`)[0];
+            popup_9f018f139c87f7e35c14975af94e65c8.setContent(html_6d9ded1c213032225e24d8d5ec408575);
+        
+
+        circle_marker_459d60ff64f3acd9f76f957975d487de.bindPopup(popup_9f018f139c87f7e35c14975af94e65c8)
+        ;
+
+        
+    
+    
+            var circle_marker_3accb774b2498b018f10142f1406efc1 = L.circleMarker(
+                [43.465351, -2.882557],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_ca3fd066f4b36de15e77bb9171c345e6 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_eac8fdcde215f08b9832ed66bb5e9de2 = $(`<div id="html_eac8fdcde215f08b9832ed66bb5e9de2" style="width: 100.0%; height: 100.0%;"><h5>Biscay Marine Energy Platform (BiMEP)</h5><br><b>Info: </b>nan<br><b>Projects: </b>DemoSATH<br><b>Area: </b>nan km2</div>`)[0];
+            popup_ca3fd066f4b36de15e77bb9171c345e6.setContent(html_eac8fdcde215f08b9832ed66bb5e9de2);
+        
+
+        circle_marker_3accb774b2498b018f10142f1406efc1.bindPopup(popup_ca3fd066f4b36de15e77bb9171c345e6)
+        ;
+
+        
+    
+    
+            var circle_marker_fc82e565c97f46ef30ece5b6b6137370 = L.circleMarker(
+                [27.992222, -15.368333],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_cf77f1ec78c42495fc2444d0d3f89d1f = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_335f387f0ff76e43db99bda91e39de32 = $(`<div id="html_335f387f0ff76e43db99bda91e39de32" style="width: 100.0%; height: 100.0%;"><h5>Ploacan</h5><br><b>Info: </b>nan<br><b>Projects: </b>nan<br><b>Area: </b>23.0 km2</div>`)[0];
+            popup_cf77f1ec78c42495fc2444d0d3f89d1f.setContent(html_335f387f0ff76e43db99bda91e39de32);
+        
+
+        circle_marker_fc82e565c97f46ef30ece5b6b6137370.bindPopup(popup_cf77f1ec78c42495fc2444d0d3f89d1f)
+        ;
+
+        
+    
+    
+            var circle_marker_95d194939e38315466c2fdcf7bbdb5b1 = L.circleMarker(
+                [39.175, -9.1],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_513b6437112795711372e1778235cee0 = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_f305f7dcc4024c8ac37bc776b1f42766 = $(`<div id="html_f305f7dcc4024c8ac37bc776b1f42766" style="width: 100.0%; height: 100.0%;"><h5>Viana do Castelo</h5><br><b>Info: </b>80 MW <br><b>Projects: </b>WindFloat Atlantic<br><b>Area: </b>11.0 km2</div>`)[0];
+            popup_513b6437112795711372e1778235cee0.setContent(html_f305f7dcc4024c8ac37bc776b1f42766);
+        
+
+        circle_marker_95d194939e38315466c2fdcf7bbdb5b1.bindPopup(popup_513b6437112795711372e1778235cee0)
+        ;
+
+        
+    
+    
+            var circle_marker_7fa420db184b39656205efe69405f0d4 = L.circleMarker(
+                [41.4325, -8.8425],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10, "stroke": true, "weight": 3}
+            ).addTo(map_c4695b25291620fb873a203a3d92b99e);
+        
+    
+        var popup_9cba96832e602b942e2abad1e35e2bbb = L.popup({"maxWidth": 100, "minWidth": 100});
+
+        
+            var html_83458ff96c08d0961ca3fb06f0a1dc19 = $(`<div id="html_83458ff96c08d0961ca3fb06f0a1dc19" style="width: 100.0%; height: 100.0%;"><h5>Aguçadora</h5><br><b>Info: </b>TRL 6 - 8<br><b>Projects: </b>nan<br><b>Area: </b>3.3 km2</div>`)[0];
+            popup_9cba96832e602b942e2abad1e35e2bbb.setContent(html_83458ff96c08d0961ca3fb06f0a1dc19);
+        
+
+        circle_marker_7fa420db184b39656205efe69405f0d4.bindPopup(popup_9cba96832e602b942e2abad1e35e2bbb)
+        ;
+
+        
+    
+</script>
