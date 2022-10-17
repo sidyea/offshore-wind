@@ -1,4 +1,4 @@
-<h1 align='center'> Offshire Floating Wind Test-Sites </h1>
+<h1 align='center'> Offshore Floating Wind Test-Sites </h1>
 
 <p align='center'> A non-comprehensive list of relevant offshore floating wind test sites and projects</p>
 
